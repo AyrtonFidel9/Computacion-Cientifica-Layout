@@ -16,8 +16,8 @@ namespace ViewportCC.Clases
 
         const double x1 = -7;
         const double y1 = -5;
-        const double x2 = 5;
-        const double y2 = 4;
+        const double x2 = 7;
+        const double y2 = 5;
 
         const double sx1 = 0;
         const double sy1 = 0;
