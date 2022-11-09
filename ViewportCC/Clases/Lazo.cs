@@ -13,23 +13,23 @@ namespace ViewportCC.Clases
 
         }
 
-        public override void Dibujar()
+        public override void encender()
         {
             float t = 0;
             float dt = 0.001f;
 
-            double auxX0 = X0;
-            double auxY0 = Y0;
+            Vector v = new Vector(BITS, VIEWPORT, COLOR0);
 
             do
             {
-                X0 = auxX0 + (RADIO * Math.Sin(2*t));
-                Y0 = auxY0 + (RADIO * Math.Cos(3*t));
-                base.encender();
+                v.X0 = X0 + (RADIO * Math.Sin(2*t));
+                v.Y0 = Y0 + (RADIO * Math.Cos(3*t));
+                v.encender();
                 t += dt;
             }
             while (t <= 6.28);
 
         }
+
     }
 }

@@ -13,6 +13,7 @@ namespace ViewportCC.Clases
         private Color Color0;
         private PictureBox viewport;
         private Bitmap bits;
+        private Color Fondo = Color.White;
 
         const double x1 = -7;
         const double y1 = -5;
@@ -40,20 +41,29 @@ namespace ViewportCC.Clases
             get => this.viewport;
         }
 
-        public Bitmap BITS { 
+        public Bitmap BITS {
             set => this.bits = value;
             get => this.bits;
         }
-        public Color COLOR0 { 
+        public Color COLOR0 {
             set => this.Color0 = value;
             get => this.Color0;
         }
 
-        public Vector() { }
-        public Vector (double x0, double y0, Color Color0,Bitmap bits, PictureBox viewport)
+        public Color FONDO
         {
-            this.x0 = x0; 
-            this.y0 = y0; 
+            set => this.Fondo = value;
+            get => this.Fondo;
+        }
+
+        public Vector(double x0, double y0) {
+            this.x0 = x0;
+            this.y0 = y0;
+        }
+        public Vector(double x0, double y0, Color Color0, Bitmap bits, PictureBox viewport)
+        {
+            this.x0 = x0;
+            this.y0 = y0;
             this.viewport = viewport;
             this.Color0 = Color0;
             this.bits = bits;
@@ -70,6 +80,20 @@ namespace ViewportCC.Clases
             this.viewport = viewport;
             this.bits = bits;
         }
+        public Vector (double x0, double y0, Bitmap bits, PictureBox viewport) 
+        {
+            this.viewport = viewport;
+            this.bits = bits;
+            this.x0 = x0;
+            this.y0 = y0;
+        }
+
+        public Vector(Bitmap bits, PictureBox viewport, Color color)
+        {
+            this.viewport = viewport;
+            this.bits = bits;
+            this.Color0 = color;
+        }
 
 
         public virtual void encender()
@@ -84,12 +108,13 @@ namespace ViewportCC.Clases
             viewport.Image = bits;
         }
 
-        public void apagar ()
+        public virtual void apagar ()
         {
-
+            Color0 = Fondo;
+            encender();
         }
 
-        private int[] Pantalla (double x, double y)
+        public int[] Pantalla (double x, double y)
         {
             int sx, sy;
 
@@ -98,5 +123,6 @@ namespace ViewportCC.Clases
 
             return new int[] { sx, sy };
         }
+
     }
 }

@@ -9,7 +9,6 @@ namespace ViewportCC.Clases
     internal class Circulo : Vector
     {
         private double radio;
-
         public double RADIO { 
             set => this.radio = value; 
             get => this.radio;
@@ -20,20 +19,18 @@ namespace ViewportCC.Clases
 
         }
 
-        public virtual void Dibujar()
+        public override void encender()
         {
             double t = 0;
             double dt = 0.001;
 
-            double auxX0 = X0;
-            double auxY0 = Y0;
+            Vector v = new Vector(BITS, VIEWPORT, COLOR0);
 
             do
             {
-                X0 = auxX0 + (radio * Math.Cos(t));
-                Y0 = auxY0  + (radio * Math.Sin(t));
-                encender();
-               
+                v.X0 = X0 + (radio * Math.Cos(t));
+                v.Y0 = Y0 + (radio * Math.Sin(t));
+                v.encender();
                 t += dt;
             }
             while (t <= 6.28);
