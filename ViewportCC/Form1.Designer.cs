@@ -43,15 +43,29 @@
             this.button4 = new System.Windows.Forms.Button();
             this.btnParcialUno = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.parcialUNOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pintarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.degradarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pintarMisColoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.degradarMisColoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dibujarParábolaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dibujarFigurasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dibujarLazosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dibujarFuncionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.parcialDOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.parcialTRESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vector3DToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.segmento3DToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pbLienzo)).BeginInit();
             this.panel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pbLienzo
             // 
             this.pbLienzo.BackColor = System.Drawing.Color.White;
-            this.pbLienzo.Location = new System.Drawing.Point(0, 0);
+            this.pbLienzo.Location = new System.Drawing.Point(0, 24);
             this.pbLienzo.Name = "pbLienzo";
             this.pbLienzo.Size = new System.Drawing.Size(700, 500);
             this.pbLienzo.TabIndex = 0;
@@ -68,7 +82,7 @@
             this.panel1.Controls.Add(this.btnDegragarMyColors);
             this.panel1.Controls.Add(this.btnDegradar);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(699, 0);
+            this.panel1.Location = new System.Drawing.Point(701, 24);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(188, 500);
             this.panel1.TabIndex = 1;
@@ -165,7 +179,7 @@
             // 
             // btnEjes
             // 
-            this.btnEjes.Location = new System.Drawing.Point(12, 506);
+            this.btnEjes.Location = new System.Drawing.Point(12, 533);
             this.btnEjes.Name = "btnEjes";
             this.btnEjes.Size = new System.Drawing.Size(115, 31);
             this.btnEjes.TabIndex = 8;
@@ -175,7 +189,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(740, 506);
+            this.button4.Location = new System.Drawing.Point(810, 533);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(115, 31);
             this.button4.TabIndex = 9;
@@ -185,7 +199,7 @@
             // 
             // btnParcialUno
             // 
-            this.btnParcialUno.Location = new System.Drawing.Point(600, 506);
+            this.btnParcialUno.Location = new System.Drawing.Point(662, 533);
             this.btnParcialUno.Name = "btnParcialUno";
             this.btnParcialUno.Size = new System.Drawing.Size(115, 31);
             this.btnParcialUno.TabIndex = 10;
@@ -195,7 +209,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(414, 506);
+            this.button5.Location = new System.Drawing.Point(471, 533);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(171, 31);
             this.button5.TabIndex = 11;
@@ -203,33 +217,133 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button6
+            // menuStrip1
             // 
-            this.button6.Location = new System.Drawing.Point(225, 506);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(171, 31);
-            this.button6.TabIndex = 12;
-            this.button6.Text = "3D";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.parcialUNOToolStripMenuItem,
+            this.parcialDOSToolStripMenuItem,
+            this.parcialTRESToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(946, 24);
+            this.menuStrip1.TabIndex = 14;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // parcialUNOToolStripMenuItem
+            // 
+            this.parcialUNOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pintarToolStripMenuItem,
+            this.degradarToolStripMenuItem,
+            this.pintarMisColoresToolStripMenuItem,
+            this.degradarMisColoresToolStripMenuItem,
+            this.dibujarParábolaToolStripMenuItem,
+            this.dibujarFigurasToolStripMenuItem,
+            this.dibujarLazosToolStripMenuItem,
+            this.dibujarFuncionesToolStripMenuItem});
+            this.parcialUNOToolStripMenuItem.Name = "parcialUNOToolStripMenuItem";
+            this.parcialUNOToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
+            this.parcialUNOToolStripMenuItem.Text = "Parcial UNO";
+            // 
+            // pintarToolStripMenuItem
+            // 
+            this.pintarToolStripMenuItem.Name = "pintarToolStripMenuItem";
+            this.pintarToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.pintarToolStripMenuItem.Text = "Pintar";
+            this.pintarToolStripMenuItem.Click += new System.EventHandler(this.pintarToolStripMenuItem_Click);
+            // 
+            // degradarToolStripMenuItem
+            // 
+            this.degradarToolStripMenuItem.Name = "degradarToolStripMenuItem";
+            this.degradarToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.degradarToolStripMenuItem.Text = "Degradar";
+            // 
+            // pintarMisColoresToolStripMenuItem
+            // 
+            this.pintarMisColoresToolStripMenuItem.Name = "pintarMisColoresToolStripMenuItem";
+            this.pintarMisColoresToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.pintarMisColoresToolStripMenuItem.Text = "Pintar mis colores";
+            // 
+            // degradarMisColoresToolStripMenuItem
+            // 
+            this.degradarMisColoresToolStripMenuItem.Name = "degradarMisColoresToolStripMenuItem";
+            this.degradarMisColoresToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.degradarMisColoresToolStripMenuItem.Text = "Degradar mis colores";
+            // 
+            // dibujarParábolaToolStripMenuItem
+            // 
+            this.dibujarParábolaToolStripMenuItem.Name = "dibujarParábolaToolStripMenuItem";
+            this.dibujarParábolaToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.dibujarParábolaToolStripMenuItem.Text = "Dibujar parábola";
+            // 
+            // dibujarFigurasToolStripMenuItem
+            // 
+            this.dibujarFigurasToolStripMenuItem.Name = "dibujarFigurasToolStripMenuItem";
+            this.dibujarFigurasToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.dibujarFigurasToolStripMenuItem.Text = "Dibujar Figuras";
+            // 
+            // dibujarLazosToolStripMenuItem
+            // 
+            this.dibujarLazosToolStripMenuItem.Name = "dibujarLazosToolStripMenuItem";
+            this.dibujarLazosToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.dibujarLazosToolStripMenuItem.Text = "Dibujar lazos";
+            // 
+            // dibujarFuncionesToolStripMenuItem
+            // 
+            this.dibujarFuncionesToolStripMenuItem.Name = "dibujarFuncionesToolStripMenuItem";
+            this.dibujarFuncionesToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.dibujarFuncionesToolStripMenuItem.Text = "Dibujar Funciones";
+            // 
+            // parcialDOSToolStripMenuItem
+            // 
+            this.parcialDOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.vector3DToolStripMenuItem,
+            this.segmento3DToolStripMenuItem});
+            this.parcialDOSToolStripMenuItem.Name = "parcialDOSToolStripMenuItem";
+            this.parcialDOSToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.parcialDOSToolStripMenuItem.Text = "Parcial DOS";
+            // 
+            // parcialTRESToolStripMenuItem
+            // 
+            this.parcialTRESToolStripMenuItem.Name = "parcialTRESToolStripMenuItem";
+            this.parcialTRESToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.parcialTRESToolStripMenuItem.Text = "Parcial TRES";
+            // 
+            // vector3DToolStripMenuItem
+            // 
+            this.vector3DToolStripMenuItem.Name = "vector3DToolStripMenuItem";
+            this.vector3DToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vector3DToolStripMenuItem.Text = "Vector 3D";
+            this.vector3DToolStripMenuItem.Click += new System.EventHandler(this.vector3DToolStripMenuItem_Click);
+            // 
+            // segmento3DToolStripMenuItem
+            // 
+            this.segmento3DToolStripMenuItem.Name = "segmento3DToolStripMenuItem";
+            this.segmento3DToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.segmento3DToolStripMenuItem.Text = "Segmento 3D";
+            this.segmento3DToolStripMenuItem.Click += new System.EventHandler(this.segmento3DToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(888, 546);
-            this.Controls.Add(this.button6);
+            this.ClientSize = new System.Drawing.Size(946, 571);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.btnParcialUno);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btnEjes);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pbLienzo);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pbLienzo)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -250,6 +364,19 @@
         private Button button4;
         private Button btnParcialUno;
         private Button button5;
-        private Button button6;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem parcialUNOToolStripMenuItem;
+        private ToolStripMenuItem pintarToolStripMenuItem;
+        private ToolStripMenuItem parcialDOSToolStripMenuItem;
+        private ToolStripMenuItem parcialTRESToolStripMenuItem;
+        private ToolStripMenuItem degradarToolStripMenuItem;
+        private ToolStripMenuItem pintarMisColoresToolStripMenuItem;
+        private ToolStripMenuItem degradarMisColoresToolStripMenuItem;
+        private ToolStripMenuItem dibujarParábolaToolStripMenuItem;
+        private ToolStripMenuItem dibujarFigurasToolStripMenuItem;
+        private ToolStripMenuItem dibujarLazosToolStripMenuItem;
+        private ToolStripMenuItem dibujarFuncionesToolStripMenuItem;
+        private ToolStripMenuItem vector3DToolStripMenuItem;
+        private ToolStripMenuItem segmento3DToolStripMenuItem;
     }
 }

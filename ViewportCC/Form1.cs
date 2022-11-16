@@ -419,6 +419,21 @@ namespace ViewportCC
 
         private void button6_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void segmento3D_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pintarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vector3DToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             double t = 0;
             double dt = 0.002;
             Vector3D vector = new Vector3D(bits, pbLienzo);
@@ -427,7 +442,7 @@ namespace ViewportCC
             {
                 vector.X0 = 1 + (1 * Math.Cos(t));
                 vector.Y0 = -3 + (1 * Math.Sin(t));
-                vector.Z0 = t/15;
+                vector.Z0 = t / 15;
                 vector.encender();
                 t += dt;
             }
@@ -453,11 +468,185 @@ namespace ViewportCC
             {
                 vector3.X0 = 8 + (1 * Math.Cos(t));
                 vector3.Y0 = -3 + (1 * Math.Sin(t));
-                vector3.Z0 = t/8;
+                vector3.Z0 = t / 8;
                 vector3.encender();
                 t += dt;
             }
             while (t <= 15);
+        }
+
+        private void segmento3DToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Segmento3D seg3D = new Segmento3D(bits, pbLienzo, Color.Violet);
+
+             seg3D.X0 = 0;
+             seg3D.Y0 = 0;
+             seg3D.Z0 = 0;
+             seg3D.XF = 4;
+             seg3D.YF = 5;
+             seg3D.ZF = 2;
+
+             seg3D.encender();
+
+            /*double t = 0;
+            double dt = 0.002;
+            Vector3D vector = new Vector3D(bits, pbLienzo);
+            vector.COLOR0 = Color.Black;
+            do
+            {
+                vector.X0 = vector.X0 + 3 * Math.Cos(t);
+                vector.Y0 = vector.Y0 + 3 * Math.Sin(t);
+                vector.Z0 = Math.Cos(3);
+                vector.encender();
+                t += dt;
+            }
+            while (t <= 6.3);*/
+
+            Segmento3D ejeZ = new Segmento3D(bits, pbLienzo, Color.Red);
+
+            ejeZ.X0 = 0;
+            ejeZ.Y0 = 0;
+            ejeZ.Z0 = 0;
+
+            ejeZ.XF = 0;
+            ejeZ.YF = 0;
+            ejeZ.ZF = 4;
+
+            ejeZ.encender();
+
+            Segmento3D ejeX = new Segmento3D(bits, pbLienzo, Color.Blue);
+
+            ejeX.X0 = 0;
+            ejeX.Y0 = 0;
+            ejeX.Z0 = 0;
+
+            ejeX.XF = 8;
+            ejeX.YF = 0;
+            ejeX.ZF = 0;
+
+            ejeX.encender();
+
+
+            Segmento3D ejeY = new Segmento3D(bits, pbLienzo, Color.Black);
+
+            ejeY.X0 = 0;
+            ejeY.Y0 = 0;
+            ejeY.Z0 = 0;
+
+            ejeY.XF = 0;
+            ejeY.YF = 5;
+            ejeY.ZF = 0;
+
+            ejeY.encender();
+
+
+            Segmento3D cuatro = new Segmento3D(bits, pbLienzo, Color.Black);
+            cuatro.X0 = 0;
+            cuatro.Y0 = 0;
+            cuatro.Z0 = 4;
+
+            cuatro.XF = 0;
+            cuatro.YF = 5;
+            cuatro.ZF = 4;
+
+            cuatro.encender();
+
+            Segmento3D cinco = new Segmento3D(bits, pbLienzo, Color.Black);
+            cinco.X0 = 0;
+            cinco.Y0 = 5;
+            cinco.Z0 = 4;
+
+            cinco.XF = 0;
+            cinco.YF = 5;
+            cinco.ZF = 0;
+
+            cinco.encender();
+
+
+            Segmento3D seis = new Segmento3D(bits, pbLienzo, Color.Blue);
+            seis.X0 = 0;
+            seis.Y0 = 5;
+            seis.Z0 = 0;
+
+            seis.XF = 8;
+            seis.YF = 5;
+            seis.ZF = 0;
+
+            seis.encender();
+
+
+            Segmento3D siete = new Segmento3D(bits, pbLienzo, Color.Blue);
+            siete.X0 = 8;
+            siete.Y0 = 5;
+            siete.Z0 = 0;
+
+            siete.XF = 8;
+            siete.YF = 0;
+            siete.ZF = 0;
+
+            siete.encender();
+
+
+            Segmento3D ocho = new Segmento3D(bits, pbLienzo, Color.Red);
+            ocho.X0 = 8;
+            ocho.Y0 = 0;
+            ocho.Z0 = 0;
+
+            ocho.XF = 8;
+            ocho.YF = 0;
+            ocho.ZF = 4;
+
+            ocho.encender();
+
+
+            Segmento3D nueve = new Segmento3D(bits, pbLienzo, Color.Red);
+            nueve.X0 = 8;
+            nueve.Y0 = 0;
+            nueve.Z0 = 4;
+
+            nueve.XF = 0;
+            nueve.YF = 0;
+            nueve.ZF = 4;
+
+            nueve.encender();
+
+            Segmento3D diez = new Segmento3D(bits, pbLienzo, Color.Red);
+            diez.X0 = 8;
+            diez.Y0 = 0;
+            diez.Z0 = 4;
+
+            diez.XF = 8;
+            diez.YF = 5;
+            diez.ZF = 4;
+
+            diez.encender();
+
+            Segmento3D once = new Segmento3D(bits, pbLienzo, Color.Red);
+            once.X0 = 8;
+            once.Y0 = 5;
+            once.Z0 = 4;
+
+            once.XF = 0;
+            once.YF = 5;
+            once.ZF = 4;
+
+            once.encender();
+
+            Segmento3D doce = new Segmento3D(bits, pbLienzo, Color.Red);
+            doce.X0 = 8;
+            doce.Y0 = 5;
+            doce.Z0 = 4;
+
+            doce.XF = 8;
+            doce.YF = 5;
+            doce.ZF = 0;
+
+            doce.encender();
+
+
+
+
+
         }
     }
 }
