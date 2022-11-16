@@ -54,9 +54,16 @@
             this.dibujarLazosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dibujarFuncionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.parcialDOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.parcialTRESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vector3DToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.segmento3DToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.superficieTIPO1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.superficieTIPO2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.superficieTIPO3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cilindroYEsferaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.supVTIPO1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paraboloideHiperbolicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.parcialTRESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hiperboloideDeUnaHojaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pbLienzo)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -298,10 +305,73 @@
             // 
             this.parcialDOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.vector3DToolStripMenuItem,
-            this.segmento3DToolStripMenuItem});
+            this.segmento3DToolStripMenuItem,
+            this.superficieTIPO1ToolStripMenuItem,
+            this.superficieTIPO2ToolStripMenuItem,
+            this.superficieTIPO3ToolStripMenuItem,
+            this.cilindroYEsferaToolStripMenuItem,
+            this.supVTIPO1ToolStripMenuItem,
+            this.paraboloideHiperbolicoToolStripMenuItem,
+            this.hiperboloideDeUnaHojaToolStripMenuItem});
             this.parcialDOSToolStripMenuItem.Name = "parcialDOSToolStripMenuItem";
             this.parcialDOSToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.parcialDOSToolStripMenuItem.Text = "Parcial DOS";
+            // 
+            // vector3DToolStripMenuItem
+            // 
+            this.vector3DToolStripMenuItem.Name = "vector3DToolStripMenuItem";
+            this.vector3DToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.vector3DToolStripMenuItem.Text = "Vector 3D";
+            this.vector3DToolStripMenuItem.Click += new System.EventHandler(this.vector3DToolStripMenuItem_Click);
+            // 
+            // segmento3DToolStripMenuItem
+            // 
+            this.segmento3DToolStripMenuItem.Name = "segmento3DToolStripMenuItem";
+            this.segmento3DToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.segmento3DToolStripMenuItem.Text = "Segmento 3D";
+            this.segmento3DToolStripMenuItem.Click += new System.EventHandler(this.segmento3DToolStripMenuItem_Click);
+            // 
+            // superficieTIPO1ToolStripMenuItem
+            // 
+            this.superficieTIPO1ToolStripMenuItem.Name = "superficieTIPO1ToolStripMenuItem";
+            this.superficieTIPO1ToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.superficieTIPO1ToolStripMenuItem.Text = "Superficie TIPO 1";
+            this.superficieTIPO1ToolStripMenuItem.Click += new System.EventHandler(this.superficieTIPO1ToolStripMenuItem_Click);
+            // 
+            // superficieTIPO2ToolStripMenuItem
+            // 
+            this.superficieTIPO2ToolStripMenuItem.Name = "superficieTIPO2ToolStripMenuItem";
+            this.superficieTIPO2ToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.superficieTIPO2ToolStripMenuItem.Text = "Superficie TIPO 2";
+            this.superficieTIPO2ToolStripMenuItem.Click += new System.EventHandler(this.superficieTIPO2ToolStripMenuItem_Click);
+            // 
+            // superficieTIPO3ToolStripMenuItem
+            // 
+            this.superficieTIPO3ToolStripMenuItem.Name = "superficieTIPO3ToolStripMenuItem";
+            this.superficieTIPO3ToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.superficieTIPO3ToolStripMenuItem.Text = "Superficie TIPO 3";
+            this.superficieTIPO3ToolStripMenuItem.Click += new System.EventHandler(this.superficieTIPO3ToolStripMenuItem_Click);
+            // 
+            // cilindroYEsferaToolStripMenuItem
+            // 
+            this.cilindroYEsferaToolStripMenuItem.Name = "cilindroYEsferaToolStripMenuItem";
+            this.cilindroYEsferaToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.cilindroYEsferaToolStripMenuItem.Text = "Cilindro y esfera";
+            this.cilindroYEsferaToolStripMenuItem.Click += new System.EventHandler(this.cilindroYEsferaToolStripMenuItem_Click);
+            // 
+            // supVTIPO1ToolStripMenuItem
+            // 
+            this.supVTIPO1ToolStripMenuItem.Name = "supVTIPO1ToolStripMenuItem";
+            this.supVTIPO1ToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.supVTIPO1ToolStripMenuItem.Text = "Paraboloide";
+            this.supVTIPO1ToolStripMenuItem.Click += new System.EventHandler(this.supVTIPO1ToolStripMenuItem_Click);
+            // 
+            // paraboloideHiperbolicoToolStripMenuItem
+            // 
+            this.paraboloideHiperbolicoToolStripMenuItem.Name = "paraboloideHiperbolicoToolStripMenuItem";
+            this.paraboloideHiperbolicoToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.paraboloideHiperbolicoToolStripMenuItem.Text = "Paraboloide hiperbolico";
+            this.paraboloideHiperbolicoToolStripMenuItem.Click += new System.EventHandler(this.paraboloideHiperbolicoToolStripMenuItem_Click);
             // 
             // parcialTRESToolStripMenuItem
             // 
@@ -309,19 +379,12 @@
             this.parcialTRESToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
             this.parcialTRESToolStripMenuItem.Text = "Parcial TRES";
             // 
-            // vector3DToolStripMenuItem
+            // hiperboloideDeUnaHojaToolStripMenuItem
             // 
-            this.vector3DToolStripMenuItem.Name = "vector3DToolStripMenuItem";
-            this.vector3DToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.vector3DToolStripMenuItem.Text = "Vector 3D";
-            this.vector3DToolStripMenuItem.Click += new System.EventHandler(this.vector3DToolStripMenuItem_Click);
-            // 
-            // segmento3DToolStripMenuItem
-            // 
-            this.segmento3DToolStripMenuItem.Name = "segmento3DToolStripMenuItem";
-            this.segmento3DToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.segmento3DToolStripMenuItem.Text = "Segmento 3D";
-            this.segmento3DToolStripMenuItem.Click += new System.EventHandler(this.segmento3DToolStripMenuItem_Click);
+            this.hiperboloideDeUnaHojaToolStripMenuItem.Name = "hiperboloideDeUnaHojaToolStripMenuItem";
+            this.hiperboloideDeUnaHojaToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.hiperboloideDeUnaHojaToolStripMenuItem.Text = "Hiperboloide de una hoja";
+            this.hiperboloideDeUnaHojaToolStripMenuItem.Click += new System.EventHandler(this.hiperboloideDeUnaHojaToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -378,5 +441,12 @@
         private ToolStripMenuItem dibujarFuncionesToolStripMenuItem;
         private ToolStripMenuItem vector3DToolStripMenuItem;
         private ToolStripMenuItem segmento3DToolStripMenuItem;
+        private ToolStripMenuItem superficieTIPO1ToolStripMenuItem;
+        private ToolStripMenuItem superficieTIPO2ToolStripMenuItem;
+        private ToolStripMenuItem superficieTIPO3ToolStripMenuItem;
+        private ToolStripMenuItem cilindroYEsferaToolStripMenuItem;
+        private ToolStripMenuItem supVTIPO1ToolStripMenuItem;
+        private ToolStripMenuItem paraboloideHiperbolicoToolStripMenuItem;
+        private ToolStripMenuItem hiperboloideDeUnaHojaToolStripMenuItem;
     }
 }

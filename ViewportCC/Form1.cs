@@ -477,7 +477,7 @@ namespace ViewportCC
 
         private void segmento3DToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Segmento3D seg3D = new Segmento3D(bits, pbLienzo, Color.Violet);
+            /*Segmento3D seg3D = new Segmento3D(bits, pbLienzo, Color.Violet);
 
              seg3D.X0 = 0;
              seg3D.Y0 = 0;
@@ -486,7 +486,7 @@ namespace ViewportCC
              seg3D.YF = 5;
              seg3D.ZF = 2;
 
-             seg3D.encender();
+             seg3D.encender();*/
 
             /*double t = 0;
             double dt = 0.002;
@@ -502,7 +502,7 @@ namespace ViewportCC
             }
             while (t <= 6.3);*/
 
-            Segmento3D ejeZ = new Segmento3D(bits, pbLienzo, Color.Red);
+            Segmento3D ejeZ = new Segmento3D(bits, pbLienzo, Color.Black);
 
             ejeZ.X0 = 0;
             ejeZ.Y0 = 0;
@@ -514,7 +514,7 @@ namespace ViewportCC
 
             ejeZ.encender();
 
-            Segmento3D ejeX = new Segmento3D(bits, pbLienzo, Color.Blue);
+            Segmento3D ejeX = new Segmento3D(bits, pbLienzo, Color.Black);
 
             ejeX.X0 = 0;
             ejeX.Y0 = 0;
@@ -563,7 +563,7 @@ namespace ViewportCC
             cinco.encender();
 
 
-            Segmento3D seis = new Segmento3D(bits, pbLienzo, Color.Blue);
+            Segmento3D seis = new Segmento3D(bits, pbLienzo, Color.Black);
             seis.X0 = 0;
             seis.Y0 = 5;
             seis.Z0 = 0;
@@ -575,7 +575,7 @@ namespace ViewportCC
             seis.encender();
 
 
-            Segmento3D siete = new Segmento3D(bits, pbLienzo, Color.Blue);
+            Segmento3D siete = new Segmento3D(bits, pbLienzo, Color.Black);
             siete.X0 = 8;
             siete.Y0 = 5;
             siete.Z0 = 0;
@@ -587,7 +587,7 @@ namespace ViewportCC
             siete.encender();
 
 
-            Segmento3D ocho = new Segmento3D(bits, pbLienzo, Color.Red);
+            Segmento3D ocho = new Segmento3D(bits, pbLienzo, Color.Black);
             ocho.X0 = 8;
             ocho.Y0 = 0;
             ocho.Z0 = 0;
@@ -599,7 +599,7 @@ namespace ViewportCC
             ocho.encender();
 
 
-            Segmento3D nueve = new Segmento3D(bits, pbLienzo, Color.Red);
+            Segmento3D nueve = new Segmento3D(bits, pbLienzo, Color.Black);
             nueve.X0 = 8;
             nueve.Y0 = 0;
             nueve.Z0 = 4;
@@ -610,7 +610,7 @@ namespace ViewportCC
 
             nueve.encender();
 
-            Segmento3D diez = new Segmento3D(bits, pbLienzo, Color.Red);
+            /*Segmento3D diez = new Segmento3D(bits, pbLienzo, Color.Red);
             diez.X0 = 8;
             diez.Y0 = 0;
             diez.Z0 = 4;
@@ -641,10 +641,94 @@ namespace ViewportCC
             doce.YF = 5;
             doce.ZF = 0;
 
-            doce.encender();
+            doce.encender();*/
 
 
 
+
+
+        }
+
+        private void superficieTIPO1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SuperficieV sup = new SuperficieV(bits, pbLienzo, Color.Red);
+            sup.X0 = 1;
+            sup.Y0 = 1;
+            sup.Z0 = -2;
+            sup.TIPO = 1;
+            sup.RD = 2;
+            sup.encender();
+
+
+        }
+
+        private void superficieTIPO2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SuperficieV sup = new SuperficieV(bits, pbLienzo, Color.Red);
+            sup.X0 = 1;
+            sup.Y0 = 1;
+            sup.Z0 = -2;
+            sup.TIPO = 2;
+            sup.RD = 2;
+            sup.encender();
+        }
+
+        private void superficieTIPO3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SuperficieV sup = new SuperficieV(bits, pbLienzo, Color.Red);
+            sup.X0 = 0;
+            sup.Y0 = 0;
+            sup.Z0 = 0;
+            sup.TIPO = 3;
+            sup.RD = 1;
+            sup.encender();
+        }
+
+        private void cilindroYEsferaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SuperficieV cilindro = new SuperficieV(bits, pbLienzo, Color.Red);
+            cilindro.X0 = 1;
+            cilindro.Y0 = -1;
+            cilindro.Z0 = -2;
+            cilindro.TIPO = 1;
+            cilindro.RD = 1;
+            cilindro.encender();
+
+            SuperficieV esfera = new SuperficieV(bits, pbLienzo, Color.Blue);
+            esfera.X0 = 0;
+            esfera.Y0 = 2.5;
+            esfera.Z0 = 1;
+            esfera.TIPO = 2;
+            esfera.RD = 2;
+            esfera.encender();
+        }
+
+        private void supVTIPO1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SuperficieR s = new SuperficieR(bits,pbLienzo,Color.DarkGreen);
+            s.TIPO = 1;
+            s.FV = 0.1;
+            s.encender();
+        }
+
+        private void paraboloideHiperbolicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SuperficieR s = new SuperficieR(bits, pbLienzo, Color.DarkGreen);
+            s.TIPO = 2;
+            s.FV = 0.8;
+            s.encender();
+        }
+
+        private void hiperboloideDeUnaHojaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SuperficieV hiperboloide = new SuperficieV(bits,pbLienzo, Color.DarkGreen);
+            hiperboloide.TIPO = 4;
+            hiperboloide.RD = 2;
+            hiperboloide.X0 = 1;
+            hiperboloide.Y0 = 1;
+            hiperboloide.Z0 = 1;
+
+            hiperboloide.encender();
 
 
         }
