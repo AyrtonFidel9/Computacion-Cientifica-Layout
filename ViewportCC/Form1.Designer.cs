@@ -30,15 +30,14 @@
         {
             this.pbLienzo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.cmbAlfombras = new System.Windows.Forms.ComboBox();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnLazos = new System.Windows.Forms.Button();
             this.btnSegmento = new System.Windows.Forms.Button();
             this.btnParabola = new System.Windows.Forms.Button();
             this.btnPintarMisColores = new System.Windows.Forms.Button();
             this.btnDegragarMyColors = new System.Windows.Forms.Button();
-            this.btnDegradar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnEjes = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnParcialUno = new System.Windows.Forms.Button();
@@ -62,8 +61,15 @@
             this.cilindroYEsferaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supVTIPO1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paraboloideHiperbolicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.parcialTRESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hiperboloideDeUnaHojaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alfombraGRISToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alfombraGRISToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.miAlfombraToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.masAlfombrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tiroParabólicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rebotesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.proyeccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.parcialTRESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pbLienzo)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -77,32 +83,68 @@
             this.pbLienzo.Size = new System.Drawing.Size(700, 500);
             this.pbLienzo.TabIndex = 0;
             this.pbLienzo.TabStop = false;
+            this.pbLienzo.Click += new System.EventHandler(this.pbLienzo_Click);
+            this.pbLienzo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbLienzo_MouseClick);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.cmbAlfombras);
+            this.panel1.Controls.Add(this.btnLimpiar);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.btnLazos);
             this.panel1.Controls.Add(this.btnSegmento);
             this.panel1.Controls.Add(this.btnParabola);
             this.panel1.Controls.Add(this.btnPintarMisColores);
             this.panel1.Controls.Add(this.btnDegragarMyColors);
-            this.panel1.Controls.Add(this.btnDegradar);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(701, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(188, 500);
+            this.panel1.Size = new System.Drawing.Size(212, 500);
             this.panel1.TabIndex = 1;
             // 
-            // button3
+            // cmbAlfombras
             // 
-            this.button3.Location = new System.Drawing.Point(41, 442);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(115, 31);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Limpiar";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.cmbAlfombras.FormattingEnabled = true;
+            this.cmbAlfombras.Items.AddRange(new object[] {
+            "Tapete 1",
+            "Tapete 2",
+            "Tapete 3",
+            "Tapete 4",
+            "Tapete 5",
+            "Tapete 6",
+            "Tapete 7",
+            "Tapete 8",
+            "Tapete 9",
+            "Tapete 10",
+            "Tapete 11",
+            "Tapete 12",
+            "Tapete 13",
+            "Tapete 14",
+            "Tapete 15",
+            "Tapete 16",
+            "Tapete 17",
+            "Tapete 19",
+            "Tapete 20",
+            "Tapete 21",
+            "MADERA",
+            "NIEVE",
+            "TELA JEAN",
+            "AGUA"});
+            this.cmbAlfombras.Location = new System.Drawing.Point(19, 28);
+            this.cmbAlfombras.Name = "cmbAlfombras";
+            this.cmbAlfombras.Size = new System.Drawing.Size(175, 23);
+            this.cmbAlfombras.TabIndex = 9;
+            this.cmbAlfombras.Visible = false;
+            this.cmbAlfombras.SelectedIndexChanged += new System.EventHandler(this.cmbAlfombras_SelectedIndexChanged);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(41, 442);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(115, 31);
+            this.btnLimpiar.TabIndex = 8;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // button2
             // 
@@ -163,26 +205,6 @@
             this.btnDegragarMyColors.Text = "degradar mis colores";
             this.btnDegragarMyColors.UseVisualStyleBackColor = true;
             this.btnDegragarMyColors.Click += new System.EventHandler(this.btnDegragarMyColors_Click);
-            // 
-            // btnDegradar
-            // 
-            this.btnDegradar.Location = new System.Drawing.Point(41, 73);
-            this.btnDegradar.Name = "btnDegradar";
-            this.btnDegradar.Size = new System.Drawing.Size(115, 23);
-            this.btnDegradar.TabIndex = 1;
-            this.btnDegradar.Text = "degradar";
-            this.btnDegradar.UseVisualStyleBackColor = true;
-            this.btnDegradar.Click += new System.EventHandler(this.btnDegradar_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(41, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "pintar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnPintar);
             // 
             // btnEjes
             // 
@@ -264,6 +286,7 @@
             this.degradarToolStripMenuItem.Name = "degradarToolStripMenuItem";
             this.degradarToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.degradarToolStripMenuItem.Text = "Degradar";
+            this.degradarToolStripMenuItem.Click += new System.EventHandler(this.degradarToolStripMenuItem_Click);
             // 
             // pintarMisColoresToolStripMenuItem
             // 
@@ -312,7 +335,11 @@
             this.cilindroYEsferaToolStripMenuItem,
             this.supVTIPO1ToolStripMenuItem,
             this.paraboloideHiperbolicoToolStripMenuItem,
-            this.hiperboloideDeUnaHojaToolStripMenuItem});
+            this.hiperboloideDeUnaHojaToolStripMenuItem,
+            this.alfombraGRISToolStripMenuItem,
+            this.tiroParabólicoToolStripMenuItem,
+            this.rebotesToolStripMenuItem,
+            this.proyeccionToolStripMenuItem});
             this.parcialDOSToolStripMenuItem.Name = "parcialDOSToolStripMenuItem";
             this.parcialDOSToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.parcialDOSToolStripMenuItem.Text = "Parcial DOS";
@@ -373,18 +400,71 @@
             this.paraboloideHiperbolicoToolStripMenuItem.Text = "Paraboloide hiperbolico";
             this.paraboloideHiperbolicoToolStripMenuItem.Click += new System.EventHandler(this.paraboloideHiperbolicoToolStripMenuItem_Click);
             // 
-            // parcialTRESToolStripMenuItem
-            // 
-            this.parcialTRESToolStripMenuItem.Name = "parcialTRESToolStripMenuItem";
-            this.parcialTRESToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
-            this.parcialTRESToolStripMenuItem.Text = "Parcial TRES";
-            // 
             // hiperboloideDeUnaHojaToolStripMenuItem
             // 
             this.hiperboloideDeUnaHojaToolStripMenuItem.Name = "hiperboloideDeUnaHojaToolStripMenuItem";
             this.hiperboloideDeUnaHojaToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.hiperboloideDeUnaHojaToolStripMenuItem.Text = "Hiperboloide de una hoja";
             this.hiperboloideDeUnaHojaToolStripMenuItem.Click += new System.EventHandler(this.hiperboloideDeUnaHojaToolStripMenuItem_Click);
+            // 
+            // alfombraGRISToolStripMenuItem
+            // 
+            this.alfombraGRISToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.alfombraGRISToolStripMenuItem1,
+            this.miAlfombraToolStripMenuItem1,
+            this.masAlfombrasToolStripMenuItem});
+            this.alfombraGRISToolStripMenuItem.Name = "alfombraGRISToolStripMenuItem";
+            this.alfombraGRISToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.alfombraGRISToolStripMenuItem.Text = "Alfombras";
+            this.alfombraGRISToolStripMenuItem.Click += new System.EventHandler(this.alfombraGRISToolStripMenuItem_Click);
+            // 
+            // alfombraGRISToolStripMenuItem1
+            // 
+            this.alfombraGRISToolStripMenuItem1.Name = "alfombraGRISToolStripMenuItem1";
+            this.alfombraGRISToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.alfombraGRISToolStripMenuItem1.Text = "Alfombra GRIS";
+            this.alfombraGRISToolStripMenuItem1.Click += new System.EventHandler(this.alfombraGRISToolStripMenuItem1_Click);
+            // 
+            // miAlfombraToolStripMenuItem1
+            // 
+            this.miAlfombraToolStripMenuItem1.Name = "miAlfombraToolStripMenuItem1";
+            this.miAlfombraToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.miAlfombraToolStripMenuItem1.Text = "Mi alfombra";
+            this.miAlfombraToolStripMenuItem1.Click += new System.EventHandler(this.miAlfombraToolStripMenuItem1_Click);
+            // 
+            // masAlfombrasToolStripMenuItem
+            // 
+            this.masAlfombrasToolStripMenuItem.Name = "masAlfombrasToolStripMenuItem";
+            this.masAlfombrasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.masAlfombrasToolStripMenuItem.Text = "Mas alfombras";
+            this.masAlfombrasToolStripMenuItem.Click += new System.EventHandler(this.masAlfombrasToolStripMenuItem_Click);
+            // 
+            // tiroParabólicoToolStripMenuItem
+            // 
+            this.tiroParabólicoToolStripMenuItem.Name = "tiroParabólicoToolStripMenuItem";
+            this.tiroParabólicoToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.tiroParabólicoToolStripMenuItem.Text = "Tiro parabólico";
+            this.tiroParabólicoToolStripMenuItem.Click += new System.EventHandler(this.tiroParabólicoToolStripMenuItem_Click);
+            // 
+            // rebotesToolStripMenuItem
+            // 
+            this.rebotesToolStripMenuItem.Name = "rebotesToolStripMenuItem";
+            this.rebotesToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.rebotesToolStripMenuItem.Text = "Rebotes";
+            this.rebotesToolStripMenuItem.Click += new System.EventHandler(this.rebotesToolStripMenuItem_Click);
+            // 
+            // proyeccionToolStripMenuItem
+            // 
+            this.proyeccionToolStripMenuItem.Name = "proyeccionToolStripMenuItem";
+            this.proyeccionToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.proyeccionToolStripMenuItem.Text = "Proyeccion";
+            this.proyeccionToolStripMenuItem.Click += new System.EventHandler(this.proyeccionToolStripMenuItem_Click);
+            // 
+            // parcialTRESToolStripMenuItem
+            // 
+            this.parcialTRESToolStripMenuItem.Name = "parcialTRESToolStripMenuItem";
+            this.parcialTRESToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.parcialTRESToolStripMenuItem.Text = "Parcial TRES";
             // 
             // Form1
             // 
@@ -414,8 +494,6 @@
 
         private PictureBox pbLienzo;
         private Panel panel1;
-        private Button button1;
-        private Button btnDegradar;
         private Button btnDegragarMyColors;
         private Button btnPintarMisColores;
         private Button btnParabola;
@@ -423,7 +501,7 @@
         private Button btnLazos;
         private Button button2;
         private Button btnEjes;
-        private Button button3;
+        private Button btnLimpiar;
         private Button button4;
         private Button btnParcialUno;
         private Button button5;
@@ -448,5 +526,13 @@
         private ToolStripMenuItem supVTIPO1ToolStripMenuItem;
         private ToolStripMenuItem paraboloideHiperbolicoToolStripMenuItem;
         private ToolStripMenuItem hiperboloideDeUnaHojaToolStripMenuItem;
+        private ToolStripMenuItem alfombraGRISToolStripMenuItem;
+        private ToolStripMenuItem alfombraGRISToolStripMenuItem1;
+        private ToolStripMenuItem miAlfombraToolStripMenuItem1;
+        private ToolStripMenuItem masAlfombrasToolStripMenuItem;
+        private ComboBox cmbAlfombras;
+        private ToolStripMenuItem tiroParabólicoToolStripMenuItem;
+        private ToolStripMenuItem rebotesToolStripMenuItem;
+        private ToolStripMenuItem proyeccionToolStripMenuItem;
     }
 }

@@ -91,7 +91,7 @@ namespace ViewportCC.Clases
                     {
                         v.X0 = x;
                         v.Y0 = y;
-                        v.Z0 = Fv * (Math.Pow(x, 2) - Math.Pow(y, 2))-1;
+                        v.Z0 = Fv * (Math.Pow(y, 2) - Math.Pow(x, 2));
                         v.encender();
                         y += dy;
                     }

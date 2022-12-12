@@ -124,5 +124,12 @@ namespace ViewportCC.Clases
             return new int[] { sx, sy };
         }
 
+        public static double [] Vreal(int sx, int sy)
+        {
+            return new double[] {
+                ((x1 - x2) * (sx - sx1) / (sx1 - sx2)) + x1,
+                ((y2 - y1) * (sy - sy1) / (sy1 - sy2)) + y2
+            };
+        }
     }
 }

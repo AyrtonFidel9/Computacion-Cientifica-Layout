@@ -131,11 +131,11 @@ namespace ViewportCC.Clases
             if (tipo == 4)
             {
                 double t = -2;
-                double dt = 0.05;
+                double dt = 0.03;
                 do
                 {
                     double h = 0;
-                    double dh = 0.05;
+                    double dh = 0.03;
                     do
                     {
                         v.X0 = (Math.Cosh(t) * Math.Cos(h));

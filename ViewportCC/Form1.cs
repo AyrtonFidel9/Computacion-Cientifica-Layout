@@ -23,12 +23,7 @@ namespace ViewportCC
             circulo.RADIO = 1;
         }
 
-        private void btnPintar(object sender, EventArgs e)
-        {
-            Color amarillo = Color.FromArgb(255,255,0); //amarillo
-            Color verde = Color.FromArgb(0,255,0); //verde
-            pintarLienzoMitad(pbLienzo, amarillo, verde);
-        }
+        
 
         void pintarLienzoMitad(PictureBox lienzo,Color color1, Color color2)
         {
@@ -85,10 +80,7 @@ namespace ViewportCC
 
             lienzo.Image = bits;
         }
-        private void btnDegradar_Click(object sender, EventArgs e)
-        {
-            degradarBanderaAmarilloVerde(pbLienzo);
-        }
+        
 
         private void btnDegragarMyColors_Click(object sender, EventArgs e)
         {
@@ -429,7 +421,9 @@ namespace ViewportCC
 
         private void pintarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Color amarillo = Color.FromArgb(255, 255, 0); //amarillo
+            Color verde = Color.FromArgb(0, 255, 0); //verde
+            pintarLienzoMitad(pbLienzo, amarillo, verde);
         }
 
         private void vector3DToolStripMenuItem_Click(object sender, EventArgs e)
@@ -715,7 +709,7 @@ namespace ViewportCC
         {
             SuperficieR s = new SuperficieR(bits, pbLienzo, Color.DarkGreen);
             s.TIPO = 2;
-            s.FV = 0.8;
+            s.FV = 0.6;
             s.encender();
         }
 
@@ -732,5 +726,436 @@ namespace ViewportCC
 
 
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            
+            Graphics myGraphic = Graphics.FromImage(bits);
+
+            myGraphic.Clear(Color.White);
+
+            pbLienzo.Image = bits;
+        }
+
+       
+
+        private void alfombraGRISToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void alfombraGRISToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            int ColorT;
+            Color c;
+            int width = pbLienzo.Width;
+            int height = pbLienzo.Height;
+
+            Bitmap bits = new Bitmap(width, height);
+            for (int i = 0; i < 700; i++)
+            {
+                for (int j = 0; j < 500; j++)
+                {
+                    ColorT = (i * i + j * j) % 15;
+                    c = Utils.Paleta()[ColorT];
+                    bits.SetPixel(i, j, c);
+                }
+            }
+
+            pbLienzo.Image = bits;
+        }
+
+        private void miAlfombraToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            int ColorT;
+            Color c;
+            int width = pbLienzo.Width;
+            int height = pbLienzo.Height;
+            int tipo;
+
+            Bitmap bits = new Bitmap(width, height);
+            for (int i = 0; i < 700; i++)
+            {
+                for (int j = 0; j < 500; j++)
+                {
+                   
+                        ColorT = (i * i / 2 + j * j / 2) % 15;
+                    
+                    // 1 -> i*i/2 + j*j/2
+                    // 2 -> (int)(i/2 * Math.PI * Math.Sqrt(j)) % 15
+                    // 3 ->  (int)(i*i * Math.PI + j*j) % 15
+                    // 4 -> (int)((i*i + j*j)/2) % 15
+                    // 5 -> (int)((i*i + j*j)/3) % 15
+                    // 6 -> (int)((i*i + j*j)/4) % 15
+                    // 7 -> ColorT = (int)(Math.PI * Math.Cos(i+j)) % 15;
+                    //      ColorT = ColorT < 0 ? ColorT * -1 : ColorT;
+                    // 8 -> (int)(Math.Sqrt(i*i + j*j)) % 15
+                    //      (int)(Math.Sqrt((i*i + j*j)/6)) % 15;
+                    // 9 -> (int)(i*i*j*j) % 15
+                    // 10 -> (int)((i+j/2)*Math.PI) % 15
+                    // 11 -> (int)((i/4 + Math.Sqrt(j)) * Math.PI) % 15
+                    // 12 -> (int)((Math.Sqrt(i) + Math.Sqrt(j)) * Math.PI) % 15
+                    // 13 -> (int)(Math.Cos(Math.Sqrt(i))+ Math.Sin(Math.Sqrt(j))) % 15
+                    // 14 -> (int)(Math.Sqrt(Math.Pow(i,Math.PI) + Math.Pow(j, Math.PI)))) % 15;
+                    // 14 -> (int)(Math.Sqrt(Math.Pow(i,Math.PI)) + Math.Sqrt(Math.Pow(j, Math.PI))) % 15;
+                    // 15 -> ColorT = (int)(Math.Sqrt(Math.Sin(i) + Math.Cos(j))) % 15;
+                    // 16 -> ColorT = (int)(Math.Sqrt(Math.Cos(i*j))) % 13;
+                    // 17 -> ColorT = (int)(Math.Sqrt(Math.Cos(i*j/Math.PI))) % 13;
+                    //ColorT = (int)(Math.Sqrt((i*j/Math.PI) + Math.Pow(i+j,2))) % 13;
+                    ColorT = ColorT < 0 ? ColorT * -1 : ColorT;
+                    c = Utils.Paleta()[ColorT];
+                    bits.SetPixel(i, j, c);
+                }
+            }
+
+            pbLienzo.Image = bits;
+        }
+
+        private void degradarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            degradarBanderaAmarilloVerde(pbLienzo);
+        }
+
+        private void masAlfombrasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cmbAlfombras.Visible = true;
+        }
+
+        private void cmbAlfombras_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int ColorT = 1;
+            Color c;
+            int width = pbLienzo.Width;
+            int height = pbLienzo.Height;
+            int tipo = cmbAlfombras.SelectedIndex;
+
+            Bitmap bits = new Bitmap(width, height);
+            for (int i = 0; i < 700; i++)
+            {
+                for (int j = 0; j < 500; j++)
+                {
+                    switch (cmbAlfombras.SelectedIndex)
+                    {
+                        case 0: 
+                            ColorT = (i * i / 2 + j * j / 2) % 15;
+                            break;
+                        case 1: 
+                            ColorT = (int)(i / 2 * Math.PI * Math.Sqrt(j)) % 15;
+                            break;
+                        case 2:
+                            ColorT = (int)(i * i * Math.PI + j * j) % 15;
+                            break;
+                        case 3:
+                            ColorT = ((i * i + j * j) / 2) % 15;
+                            break;
+                        case 4:
+                            ColorT = ((i * i + j * j) / 3) % 15;
+                            break;
+                        case 5:
+                            ColorT = ((i * i + j * j) / 4) % 15;
+                            break;
+                        case 6:
+                            ColorT = (int)(Math.PI * Math.Cos(i + j)) % 15;
+                            break;
+                        case 7:
+                            ColorT = (int)(Math.Sqrt(i * i + j * j)) % 15;
+                            break;
+                        case 8:
+                            ColorT = (i * i * j * j) % 15;
+                            break;
+                        case 9:
+                            ColorT = (int)((i + j / 2) * Math.PI) % 15;
+                            break;
+                        case 10:
+                            ColorT = (int)((i / 4 + Math.Sqrt(j)) * Math.PI) % 15;
+                            break;
+                        case 11:
+                            ColorT = (int)((Math.Sqrt(i) + Math.Sqrt(j)) * Math.PI) % 15;
+                            break;
+                        case 12:
+                            ColorT = (int)(Math.Cos(Math.Sqrt(i)) + Math.Sin(Math.Sqrt(j))) % 15;
+                            break;
+                        case 13:
+                            ColorT = (int)(Math.Sqrt(Math.Pow(i, Math.PI)) + Math.Sqrt(Math.Pow(j, Math.PI))) % 15;
+                            break;
+                        case 14:
+                            ColorT = (int)(Math.Sqrt(Math.Sin(i) + Math.Cos(j))) % 15;
+                            break;
+                        case 15:
+                            ColorT = (int)(Math.Sqrt(Math.Cos(i * j))) % 13;
+                            break;
+                        case 16:
+                            ColorT = (int)(Math.Sqrt(Math.Cos(i * j / Math.PI))) % 13;
+                            break;
+                        case 17:
+                            ColorT = ((i * i + j * j) / 5) % 13;
+                            break;
+                        case 18:
+                            ColorT = ((i * i + j * j) / 6) % 13;
+                            break;
+                        case 19:
+                            ColorT = (i * i + j * j) / 7 % 13;
+                            break;
+                        case 20:
+                            ColorT = (int)(Math.Sqrt(i) * j / 100) % 15;
+                            break;
+                        case 21:
+                            ColorT = (int)(Math.E * (i/ 2) * Math.PI * (Math.Pow(Math.Sin(j), 3)) + j * i) % 6;
+                            break;
+                        case 22: //tela jean
+                            //ColorT = (int)(Math.E * (j / 2) * Math.PI * (Math.Pow(Math.Cos(i), 3))) % 15;
+                            //ColorT = (int)(Math.Pow((i/Math.Cos(j)),2)) % 15;
+                            ColorT = (int)((Math.Pow(Math.Cos(i), 2) * Math.PI *j+ Math.Sin(i) + Math.Cos(j) + Math.Tan(i*j)) * Math.E) % 16;
+                            break;
+                        case 23:
+                            ColorT = (int)(i / 2 * j/Math.E + Math.PI + Math.Cos(i*i*i) * Math.Sqrt(Math.Cos(j))) % 16;
+                            break;
+                    }
+                    
+                    
+                    // 1 -> i*i/2 + j*j/2
+                    // 2 -> (int)(i/2 * Math.PI * Math.Sqrt(j)) % 15
+                    // 3 ->  (int)(i*i * Math.PI + j*j) % 15
+                    // 4 -> (int)((i*i + j*j)/2) % 15
+                    // 5 -> (int)((i*i + j*j)/3) % 15
+                    // 6 -> (int)((i*i + j*j)/4) % 15
+                    // 7 -> ColorT = (int)(Math.PI * Math.Cos(i+j)) % 15;
+                    //      ColorT = ColorT < 0 ? ColorT * -1 : ColorT;
+                    // 8 -> (int)(Math.Sqrt(i*i + j*j)) % 15
+                    //      (int)(Math.Sqrt((i*i + j*j)/6)) % 15;
+                    // 9 -> (int)(i*i*j*j) % 15
+                    // 10 -> (int)((i+j/2)*Math.PI) % 15
+                    // 11 -> (int)((i/4 + Math.Sqrt(j)) * Math.PI) % 15
+                    // 12 -> (int)((Math.Sqrt(i) + Math.Sqrt(j)) * Math.PI) % 15
+                    // 13 -> (int)(Math.Cos(Math.Sqrt(i))+ Math.Sin(Math.Sqrt(j))) % 15
+                    // 14 -> (int)(Math.Sqrt(Math.Pow(i,Math.PI) + Math.Pow(j, Math.PI)))) % 15;
+                    // 14 -> (int)(Math.Sqrt(Math.Pow(i,Math.PI)) + Math.Sqrt(Math.Pow(j, Math.PI))) % 15;
+                    // 15 -> ColorT = (int)(Math.Sqrt(Math.Sin(i) + Math.Cos(j))) % 15;
+                    // 16 -> ColorT = (int)(Math.Sqrt(Math.Cos(i*j))) % 13;
+                    // 17 -> ColorT = (int)(Math.Sqrt(Math.Cos(i*j/Math.PI))) % 13;
+                    //ColorT = (int)(Math.Sqrt((i*j/Math.PI) + Math.Pow(i+j,2))) % 13;
+                    ColorT = ColorT < 0 ? ColorT * -1 : ColorT;
+                    //c = Utils.Paleta()[ColorT];
+                    //c = Texturas.Madera()[ColorT];
+                    //c = Texturas.Nieve()[ColorT];
+                    c = Texturas.TelaJean()[ColorT];
+                    c = Texturas.Agua()[ColorT];
+                    bits.SetPixel(i, j, c);
+                }
+            }
+
+            pbLienzo.Image = bits;
+        }
+
+        private async void tiroParabólicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            /*Lazo lazo = new Lazo(bits, pbLienzo);
+
+            double x = -5;
+            lazo.RADIO = 0.8;
+            do
+            {
+                lazo.X0 = x;
+                lazo.Y0 = Math.Sin(x);
+                lazo.COLOR0 = Color.Red;
+                lazo.encender();
+
+                await Task.Delay(120);
+
+                lazo.apagar();
+
+                x += 0.5;
+            }
+            while (x <= 5);*/
+
+            Vector v = new Vector(bits, pbLienzo, Color.DarkGreen);
+            double x = -6;
+            do
+            {
+                v.X0 = x;
+                v.Y0 = (36 - x * x) / 9;
+
+                v.encender();
+                x += 0.1;
+            }
+            while (x <= 6);
+
+            Circulo c = new Circulo(bits, pbLienzo);
+            c.RADIO = 0.3;
+            x = -6;
+            do
+            {
+                c.X0 = x;
+                c.Y0 = (36 - x * x) / 9;
+                c.COLOR0 = Color.DarkGoldenrod;
+                c.encender();
+
+                await Task.Delay(1);
+
+                c.apagar();
+
+                x += 0.1;
+            }
+            while (x <= 6);
+
+        }
+
+        private async void rebotesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vector v = new Vector(bits, pbLienzo, Color.DarkGreen);
+            double x = -7;
+            do
+            {
+                v.X0 = x;
+                //v.Y0 = -(Math.Pow(x, 2) + (12 * x) + 32);
+                v.Y0 = -(Math.Pow(x, 2) + (10 * x) + 21);
+                v.encender();
+                x += 0.01;
+            }
+            while (x <= -3);
+            x = -3;
+            do
+            {
+                v.X0 = x;
+                v.Y0 = (-Math.Pow(x, 2) - (2 * x) + 3 )/ 1.2;
+
+                v.encender();
+                x += 0.01;
+            }
+            while (x <=1);
+
+            x = 1;
+
+            do
+            {
+                v.X0 = x;
+                v.Y0 = (-Math.Pow(x, 2) + (5 * x) - 4) / 1.1;
+
+                v.encender();
+                x += 0.01;
+            }
+            while (x <= 4);
+            x = 4;
+            do
+            {
+                v.X0 = x;
+                v.Y0 = (-Math.Pow(x, 2) + (10.5 * x) - 26) / 1.3;
+
+                v.encender();
+                x += 0.01;
+            }
+            while (x <= 6.5);
+
+            Circulo c = new Circulo(bits, pbLienzo);
+            c.RADIO = 0.3;
+            x= -7;
+            do
+            {
+                c.X0 = x;
+                c.Y0 = -(Math.Pow(x, 2) + (10 * x) + 21);
+                c.COLOR0 = Color.DarkGoldenrod;
+                c.encender();
+                await Task.Delay(1);
+
+                c.apagar();
+                x += 0.1;
+            }
+            while (x <= -3);
+            x = -3;
+            do
+            {
+                c.X0 = x;
+                c.Y0 = (-Math.Pow(x, 2) - (2 * x) + 3) / 1.2;
+                c.COLOR0 = Color.DarkGoldenrod;
+                c.encender();
+                await Task.Delay(1);
+
+                c.apagar();
+                x += 0.1;
+            }
+            while (x <=1);
+
+            x = 1;
+
+            do
+            {
+                c.X0 = x;
+                c.Y0 = (-Math.Pow(x, 2) + (5 * x) - 4) / 1.1;
+                c.COLOR0 = Color.DarkGoldenrod;
+                c.encender();
+                await Task.Delay(1);
+
+                c.apagar();
+                x += 0.1;
+            }
+            while (x <= 4);
+            x = 4;
+            do
+            {
+                c.X0 = x;
+                c.Y0 = (-Math.Pow(x, 2) + (10.5 * x) - 26) / 1.3;
+                c.COLOR0 = Color.DarkGoldenrod;
+                c.encender();
+                await Task.Delay(1);
+
+                c.apagar();
+                x += 0.1;
+            }
+            while (x <= 6.5);
+        }
+
+        private void proyeccionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Vector v = new Vector(bits, pbLienzo, Color.DarkGreen);
+            double x = -7;
+            do
+            {
+                v.X0 = x;
+                v.Y0 = (49 - x * x) / 18;
+
+                v.encender();
+                x += 0.01;
+            }
+            while (x <= 7);
+           
+        }
+
+        private void pbLienzo_Click(object sender, EventArgs e)
+        {
+            Circulo c = new Circulo(bits, pbLienzo);
+            c.RADIO = 0.3;
+            c.COLOR0 = Color.DarkGoldenrod;
+
+            MouseEventArgs eM = (MouseEventArgs)e;
+            double[] coor = Vector.Vreal(eM.X,eM.Y);
+            c.X0 = coor[0];
+            c.Y0 = coor[1];
+            c.encender();
+            
+
+            Segmento v = new Segmento(bits, pbLienzo);
+            v.X0 = coor[0];
+            v.Y0 = coor[1];
+            v.XF = coor[0];
+            v.YF = (49 - coor[0] * coor[0]) / 18;
+            v.COLOR0 = Color.Yellow;
+
+            v.encender();
+        }
+
+        private void pbLienzo_MouseClick(object sender, MouseEventArgs e)
+        {
+            /*Circulo c = new Circulo(bits, pbLienzo);
+            c.RADIO = 0.3;
+            c.COLOR0 = Color.DarkGoldenrod;
+
+            base.OnMouseClick(e);
+            MessageBox.Show("", "" + e.X.ToString() + e.Y.ToString());
+            c.X0 = e.X;
+            c.Y0 = e.Y;
+            c.encender();*/
+        }
+
+        
     }
 }
