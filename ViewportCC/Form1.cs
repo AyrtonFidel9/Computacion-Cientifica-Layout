@@ -1008,7 +1008,8 @@ namespace ViewportCC
             {
                 v.X0 = x;
                 //v.Y0 = -(Math.Pow(x, 2) + (12 * x) + 32);
-                v.Y0 = -(Math.Pow(x, 2) + (10 * x) + 21);
+                //v.Y0 = -(Math.Pow(x, 2) + (10 * x) + 21);
+                v.Y0 = Utils.interpolar3Puntos(x,-7, 0, -5, 4, -3,0);
                 v.encender();
                 x += 0.01;
             }
@@ -1052,7 +1053,8 @@ namespace ViewportCC
             do
             {
                 c.X0 = x;
-                c.Y0 = -(Math.Pow(x, 2) + (10 * x) + 21);
+                c.Y0 = Utils.interpolar3Puntos(x, -7, 0, -5, 4, -3, 0);
+                //c.Y0 = -(Math.Pow(x, 2) + (10 * x) + 21);
                 c.COLOR0 = Color.DarkGoldenrod;
                 c.encender();
                 await Task.Delay(1);
@@ -1106,12 +1108,13 @@ namespace ViewportCC
 
         private void proyeccionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Vector v = new Vector(bits, pbLienzo, Color.DarkGreen);
+            Vector v = new Vector(bits, pbLienzo, Color.Blue);
             double x = -7;
             do
             {
                 v.X0 = x;
-                v.Y0 = (49 - x * x) / 18;
+                //v.Y0 = (49 - x * x) / 18;
+                v.Y0 = Utils.interpolar3Puntos(x, -7, 0, 0, 2.72, 7, 0);
 
                 v.encender();
                 x += 0.01;
@@ -1120,6 +1123,7 @@ namespace ViewportCC
            
         }
 
+        // para la proyección
         private void pbLienzo_Click(object sender, EventArgs e)
         {
             Circulo c = new Circulo(bits, pbLienzo);
@@ -1127,12 +1131,13 @@ namespace ViewportCC
             c.COLOR0 = Color.DarkGoldenrod;
 
             MouseEventArgs eM = (MouseEventArgs)e;
-            double[] coor = Vector.Vreal(eM.X,eM.Y);
+            double[] coor = Vector.Vreal(eM.X, eM.Y);
             c.X0 = coor[0];
             c.Y0 = coor[1];
             c.encender();
-            
 
+
+            // rayo que se proyecta
             Segmento v = new Segmento(bits, pbLienzo);
             v.X0 = coor[0];
             v.Y0 = coor[1];
@@ -1140,7 +1145,26 @@ namespace ViewportCC
             v.YF = (49 - coor[0] * coor[0]) / 18;
             v.COLOR0 = Color.Yellow;
 
+
             v.encender();
+
+            // rayo que se refleja
+            Segmento p = new Segmento(bits, pbLienzo);
+            p.X0 = coor[0];
+            p.Y0 = (49 - coor[0] * coor[0]) / 18;
+            if (p.X0 < 0)
+            {
+                p.XF = 7;
+                p.YF = (9 / p.X0) * (7 - p.X0) + p.Y0;
+            }
+            else
+            {
+                p.XF = -7;
+                p.YF = (9 / p.X0) * (-7 - p.X0) + p.Y0;
+            }
+            p.COLOR0 = Color.Red;
+
+            p.encender();
         }
 
         private void pbLienzo_MouseClick(object sender, MouseEventArgs e)
@@ -1156,6 +1180,51 @@ namespace ViewportCC
             c.encender();*/
         }
 
-        
+        private void superficieEpsilonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SuperficieR epsilon = new SuperficieR(bits, pbLienzo, Color.DarkGreen);
+            epsilon.TIPO = 3;
+            epsilon.FV = 1.6;
+            epsilon.encender();
+        }
+
+        private void ondaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Onda o = new Onda(bits, pbLienzo, Color.DarkGreen);
+            o.t = 1.5;
+            o.interferencia3fuentes();
+        }
+
+        private async void pARCIALIIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            double posX = 2;
+            double posY = 1;
+            double rad = 2;
+            Segmento segundero = new Segmento(bits, pbLienzo);
+            segundero.X0 = posX;
+            segundero.Y0 = posY;
+            
+            Circulo c = new Circulo(bits, pbLienzo);
+            c.X0 = posX;
+            c.Y0 = posY;
+            c.RADIO = rad;
+            c.COLOR0 = Color.Blue;
+            c.encender();
+            double t = Math.PI/2;
+            double dt = 0.05;
+            do
+            {
+                segundero.XF = posX+((rad-0.3) * (Math.Cos(t)));
+                segundero.YF = posY+((rad-0.3) * (Math.Sin(t)));
+                segundero.COLOR0 = Color.DarkGreen;
+                segundero.encender();
+                
+                await Task.Delay(60);
+                segundero.apagar();
+                t -= dt;
+
+            }
+            while (t>=-3*Math.PI/2);
+        }
     }
 }

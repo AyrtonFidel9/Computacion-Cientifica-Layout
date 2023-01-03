@@ -150,6 +150,12 @@ namespace ViewportCC.Clases
                 }
                 while (t <= 2);
             }
+
+            // epsilon tipo 5
+            if(tipo == 5)
+            {
+
+            }
         }
 
     }

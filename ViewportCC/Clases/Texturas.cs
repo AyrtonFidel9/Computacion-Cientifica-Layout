@@ -53,5 +53,17 @@ namespace ViewportCC.Clases
             }
             return paleta;
         }
+        public static Color[] Grises()
+        {
+            Color[] paleta = new Color[16];
+            for (int i = 0; i < 16; i++)
+            {
+                int r = (int)Utils.interpolar2Puntos(i, 0, 100, 15, 230);
+                int g = (int)Utils.interpolar2Puntos(i, 0, 100, 15, 230);
+                int b = (int)Utils.interpolar2Puntos(i, 0, 105, 15, 220);
+                paleta[i] = Color.FromArgb(r, g, b);
+            }
+            return paleta;
+        }
     }
 }

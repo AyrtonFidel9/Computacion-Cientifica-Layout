@@ -69,7 +69,10 @@
             this.tiroParabólicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rebotesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proyeccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.superficieEpsilonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.parcialTRESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ondaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pARCIALIIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pbLienzo)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -339,7 +342,9 @@
             this.alfombraGRISToolStripMenuItem,
             this.tiroParabólicoToolStripMenuItem,
             this.rebotesToolStripMenuItem,
-            this.proyeccionToolStripMenuItem});
+            this.proyeccionToolStripMenuItem,
+            this.superficieEpsilonToolStripMenuItem,
+            this.pARCIALIIToolStripMenuItem});
             this.parcialDOSToolStripMenuItem.Name = "parcialDOSToolStripMenuItem";
             this.parcialDOSToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.parcialDOSToolStripMenuItem.Text = "Parcial DOS";
@@ -460,11 +465,34 @@
             this.proyeccionToolStripMenuItem.Text = "Proyeccion";
             this.proyeccionToolStripMenuItem.Click += new System.EventHandler(this.proyeccionToolStripMenuItem_Click);
             // 
+            // superficieEpsilonToolStripMenuItem
+            // 
+            this.superficieEpsilonToolStripMenuItem.Name = "superficieEpsilonToolStripMenuItem";
+            this.superficieEpsilonToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.superficieEpsilonToolStripMenuItem.Text = "Superficie epsilon";
+            this.superficieEpsilonToolStripMenuItem.Click += new System.EventHandler(this.superficieEpsilonToolStripMenuItem_Click);
+            // 
             // parcialTRESToolStripMenuItem
             // 
+            this.parcialTRESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ondaToolStripMenuItem});
             this.parcialTRESToolStripMenuItem.Name = "parcialTRESToolStripMenuItem";
             this.parcialTRESToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
             this.parcialTRESToolStripMenuItem.Text = "Parcial TRES";
+            // 
+            // ondaToolStripMenuItem
+            // 
+            this.ondaToolStripMenuItem.Name = "ondaToolStripMenuItem";
+            this.ondaToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.ondaToolStripMenuItem.Text = "Onda";
+            this.ondaToolStripMenuItem.Click += new System.EventHandler(this.ondaToolStripMenuItem_Click);
+            // 
+            // pARCIALIIToolStripMenuItem
+            // 
+            this.pARCIALIIToolStripMenuItem.Name = "pARCIALIIToolStripMenuItem";
+            this.pARCIALIIToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.pARCIALIIToolStripMenuItem.Text = "PARCIAL II";
+            this.pARCIALIIToolStripMenuItem.Click += new System.EventHandler(this.pARCIALIIToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -534,5 +562,8 @@
         private ToolStripMenuItem tiroParabólicoToolStripMenuItem;
         private ToolStripMenuItem rebotesToolStripMenuItem;
         private ToolStripMenuItem proyeccionToolStripMenuItem;
+        private ToolStripMenuItem superficieEpsilonToolStripMenuItem;
+        private ToolStripMenuItem ondaToolStripMenuItem;
+        private ToolStripMenuItem pARCIALIIToolStripMenuItem;
     }
 }

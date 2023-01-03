@@ -100,6 +100,29 @@ namespace ViewportCC.Clases
                 }
                 while (x <= 2.4);
             }
+
+            // epsilon 
+            if(tipo == 3)
+            {
+                double x = -4;
+                double dx = 0.05;
+                do
+                {
+                    double y = -4;
+                    double dy = 0.05;
+                    do
+                    {
+                        v.X0 = x;
+                        v.Y0 = y;
+                        v.Z0 = Fv * (Math.Pow(Math.E, -(x*x+y*y)));
+                        v.encender();
+                        y += dy;
+                    }
+                    while (y <= 4);
+                    x += dx;
+                }
+                while (x <= 4);
+            }
         }
     }
 }
