@@ -76,7 +76,7 @@ namespace ViewportCC.Clases
                     z2 = Math.Sin(z2)+1;
                     z = z1 + z2;
                     int color = (int)(z * 3.75);
-                    Color COLOR0 = Utils.Paleta()[color];
+                    Color COLOR0 = Texturas.Grises()[color];
                     BITS.SetPixel(i, j, COLOR0);
                 }
             }

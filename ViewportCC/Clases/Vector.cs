@@ -15,10 +15,10 @@ namespace ViewportCC.Clases
         private Bitmap bits;
         private Color Fondo = Color.White;
 
-        const double x1 = -7; //-7
-        const double y1 = -5;
-        const double x2 = 7;
-        const double y2 = 5;
+        const double x1 = -10.5; //-7
+        const double y1 = -7.5;
+        const double x2 = 10.5;
+        const double y2 = 7.5;
 
         const double sx1 = 0;
         const double sy1 = 0;

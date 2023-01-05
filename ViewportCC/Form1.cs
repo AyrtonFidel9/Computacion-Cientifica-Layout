@@ -1226,5 +1226,26 @@ namespace ViewportCC
             }
             while (t>=-3*Math.PI/2);
         }
+
+        private async void ondaAnimadaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            /*Onda o = new Onda(bits, pbLienzo, Color.DarkGreen);
+            double tiempo = 0;
+            do {
+                o.t = tiempo;
+                o.GrafO();
+                await Task.Delay(20);
+                tiempo += 0.05;
+            } while (tiempo <= 6 * Math.PI );*/
+            Onda o = new Onda(bits, pbLienzo, Color.DarkGreen);
+            double tiempo = 0;
+            do
+            {
+                o.t = tiempo;
+                o.interferencia3fuentes();
+                await Task.Delay(1);
+                tiempo += 0.05;
+            } while (tiempo <= 6 * Math.PI);
+        }
     }
 }
