@@ -131,5 +131,7 @@ namespace ViewportCC.Clases
                 ((y2 - y1) * (sy - sy1) / (sy1 - sy2)) + y2
             };
         }
+
+        
     }
 }

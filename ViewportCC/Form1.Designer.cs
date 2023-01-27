@@ -74,6 +74,16 @@
             this.parcialTRESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ondaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ondaAnimadaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.onda3DToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.onda3D2FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.onda3D3FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.onda3DAnimacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.onda3D2FAnimacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.onda3D3FAnimacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cuerdaVibranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.animarCuerdaVibranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.examParcial3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.laminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pbLienzo)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -484,7 +494,17 @@
             // 
             this.parcialTRESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ondaToolStripMenuItem,
-            this.ondaAnimadaToolStripMenuItem});
+            this.ondaAnimadaToolStripMenuItem,
+            this.onda3DToolStripMenuItem,
+            this.onda3D2FToolStripMenuItem,
+            this.onda3D3FToolStripMenuItem,
+            this.onda3DAnimacionToolStripMenuItem,
+            this.onda3D2FAnimacionToolStripMenuItem,
+            this.onda3D3FAnimacionToolStripMenuItem,
+            this.cuerdaVibranteToolStripMenuItem,
+            this.animarCuerdaVibranteToolStripMenuItem,
+            this.examParcial3ToolStripMenuItem,
+            this.laminToolStripMenuItem});
             this.parcialTRESToolStripMenuItem.Name = "parcialTRESToolStripMenuItem";
             this.parcialTRESToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
             this.parcialTRESToolStripMenuItem.Text = "Parcial TRES";
@@ -492,16 +512,86 @@
             // ondaToolStripMenuItem
             // 
             this.ondaToolStripMenuItem.Name = "ondaToolStripMenuItem";
-            this.ondaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ondaToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.ondaToolStripMenuItem.Text = "Onda";
             this.ondaToolStripMenuItem.Click += new System.EventHandler(this.ondaToolStripMenuItem_Click);
             // 
             // ondaAnimadaToolStripMenuItem
             // 
             this.ondaAnimadaToolStripMenuItem.Name = "ondaAnimadaToolStripMenuItem";
-            this.ondaAnimadaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ondaAnimadaToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.ondaAnimadaToolStripMenuItem.Text = "Onda animada";
             this.ondaAnimadaToolStripMenuItem.Click += new System.EventHandler(this.ondaAnimadaToolStripMenuItem_Click);
+            // 
+            // onda3DToolStripMenuItem
+            // 
+            this.onda3DToolStripMenuItem.Name = "onda3DToolStripMenuItem";
+            this.onda3DToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.onda3DToolStripMenuItem.Text = "Onda 3D";
+            this.onda3DToolStripMenuItem.Click += new System.EventHandler(this.onda3DToolStripMenuItem_Click);
+            // 
+            // onda3D2FToolStripMenuItem
+            // 
+            this.onda3D2FToolStripMenuItem.Name = "onda3D2FToolStripMenuItem";
+            this.onda3D2FToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.onda3D2FToolStripMenuItem.Text = "Onda 3D 2F";
+            this.onda3D2FToolStripMenuItem.Click += new System.EventHandler(this.onda3D2FToolStripMenuItem_Click);
+            // 
+            // onda3D3FToolStripMenuItem
+            // 
+            this.onda3D3FToolStripMenuItem.Name = "onda3D3FToolStripMenuItem";
+            this.onda3D3FToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.onda3D3FToolStripMenuItem.Text = "Onda 3D 3F";
+            this.onda3D3FToolStripMenuItem.Click += new System.EventHandler(this.onda3D3FToolStripMenuItem_Click);
+            // 
+            // onda3DAnimacionToolStripMenuItem
+            // 
+            this.onda3DAnimacionToolStripMenuItem.Name = "onda3DAnimacionToolStripMenuItem";
+            this.onda3DAnimacionToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.onda3DAnimacionToolStripMenuItem.Text = "Onda 3D animacion";
+            this.onda3DAnimacionToolStripMenuItem.Click += new System.EventHandler(this.onda3DAnimacionToolStripMenuItem_Click);
+            // 
+            // onda3D2FAnimacionToolStripMenuItem
+            // 
+            this.onda3D2FAnimacionToolStripMenuItem.Name = "onda3D2FAnimacionToolStripMenuItem";
+            this.onda3D2FAnimacionToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.onda3D2FAnimacionToolStripMenuItem.Text = "Onda 3D 2F animacion";
+            this.onda3D2FAnimacionToolStripMenuItem.Click += new System.EventHandler(this.onda3D2FAnimacionToolStripMenuItem_Click);
+            // 
+            // onda3D3FAnimacionToolStripMenuItem
+            // 
+            this.onda3D3FAnimacionToolStripMenuItem.Name = "onda3D3FAnimacionToolStripMenuItem";
+            this.onda3D3FAnimacionToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.onda3D3FAnimacionToolStripMenuItem.Text = "Onda 3D 3F animacion";
+            this.onda3D3FAnimacionToolStripMenuItem.Click += new System.EventHandler(this.onda3D3FAnimacionToolStripMenuItem_Click);
+            // 
+            // cuerdaVibranteToolStripMenuItem
+            // 
+            this.cuerdaVibranteToolStripMenuItem.Name = "cuerdaVibranteToolStripMenuItem";
+            this.cuerdaVibranteToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.cuerdaVibranteToolStripMenuItem.Text = "Cuerda Vibrante";
+            this.cuerdaVibranteToolStripMenuItem.Click += new System.EventHandler(this.cuerdaVibranteToolStripMenuItem_Click);
+            // 
+            // animarCuerdaVibranteToolStripMenuItem
+            // 
+            this.animarCuerdaVibranteToolStripMenuItem.Name = "animarCuerdaVibranteToolStripMenuItem";
+            this.animarCuerdaVibranteToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.animarCuerdaVibranteToolStripMenuItem.Text = "Animar cuerda vibrante";
+            this.animarCuerdaVibranteToolStripMenuItem.Click += new System.EventHandler(this.animarCuerdaVibranteToolStripMenuItem_Click);
+            // 
+            // examParcial3ToolStripMenuItem
+            // 
+            this.examParcial3ToolStripMenuItem.Name = "examParcial3ToolStripMenuItem";
+            this.examParcial3ToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.examParcial3ToolStripMenuItem.Text = "Exam Parcial 3";
+            this.examParcial3ToolStripMenuItem.Click += new System.EventHandler(this.examParcial3ToolStripMenuItem_Click);
+            // 
+            // laminToolStripMenuItem
+            // 
+            this.laminToolStripMenuItem.Name = "laminToolStripMenuItem";
+            this.laminToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.laminToolStripMenuItem.Text = "Lamina";
+            this.laminToolStripMenuItem.Click += new System.EventHandler(this.laminToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -575,5 +665,15 @@
         private ToolStripMenuItem ondaToolStripMenuItem;
         private ToolStripMenuItem pARCIALIIToolStripMenuItem;
         private ToolStripMenuItem ondaAnimadaToolStripMenuItem;
+        private ToolStripMenuItem onda3DToolStripMenuItem;
+        private ToolStripMenuItem onda3D2FToolStripMenuItem;
+        private ToolStripMenuItem onda3D3FToolStripMenuItem;
+        private ToolStripMenuItem onda3DAnimacionToolStripMenuItem;
+        private ToolStripMenuItem onda3D2FAnimacionToolStripMenuItem;
+        private ToolStripMenuItem onda3D3FAnimacionToolStripMenuItem;
+        private ToolStripMenuItem cuerdaVibranteToolStripMenuItem;
+        private ToolStripMenuItem animarCuerdaVibranteToolStripMenuItem;
+        private ToolStripMenuItem examParcial3ToolStripMenuItem;
+        private ToolStripMenuItem laminToolStripMenuItem;
     }
 }

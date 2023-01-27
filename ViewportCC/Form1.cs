@@ -1247,5 +1247,152 @@ namespace ViewportCC
                 tiempo += 0.05;
             } while (tiempo <= 6 * Math.PI);
         }
+
+        private void onda3DToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Onda onda3D = new Onda(bits, pbLienzo, Color.DarkGreen);
+            onda3D.m = 0.7;
+            onda3D.t = 0;
+            onda3D.v = 9.3;
+            onda3D.w = 1.5;
+            onda3D.Onda3D();
+
+        }
+
+        private void onda3D2FToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Onda onda3D = new Onda(bits, pbLienzo, Color.DarkGreen);
+            onda3D.m = 0.7;
+            onda3D.t = 0;
+            onda3D.v = 9.3;
+            onda3D.w = 1.5;
+            onda3D.Interferencia3D_2f();
+        }
+
+        private void onda3D3FToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Onda onda3D = new Onda(bits, pbLienzo, Color.DarkGreen);
+            onda3D.m = 0.7;
+            onda3D.t = 0;
+            onda3D.v = 9.3;
+            onda3D.w = 1.5;
+            onda3D.Interferencia3D_3f();
+        }
+
+        private async void onda3DAnimacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Onda onda3D = new Onda(bits, pbLienzo, Color.DarkGreen);
+            onda3D.m = 0.7;
+            onda3D.t = 0;
+            onda3D.v = 9.3;
+            onda3D.w = 1.5;
+            double t = 0.08, dt = 0, tf = 10;
+            do
+            {
+                onda3D.COLOR0 = Color.DarkGreen;
+                onda3D.Onda3D();
+                await Task.Delay(40);
+                onda3D.COLOR0 = Color.White;
+                onda3D.Onda3D();
+                onda3D.t = dt;
+                dt += t;
+            }
+            while (dt <= tf);
+        }
+
+        private async void onda3D2FAnimacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Onda onda3D = new Onda(bits, pbLienzo, Color.DarkGreen);
+            onda3D.m = 0.7;
+            onda3D.t = 0;
+            onda3D.v = 9.3;
+            onda3D.w = 1.5;
+            double t = 0.08, dt = 0, tf = 10;
+            do
+            {
+                onda3D.COLOR0 = Color.DarkGreen;
+                onda3D.Interferencia3D_2f();
+                await Task.Delay(40);
+                onda3D.COLOR0 = Color.White;
+                onda3D.Interferencia3D_2f();
+                onda3D.t = dt;
+                dt += t;
+            }
+            while (dt <= tf);
+        }
+
+        private async void onda3D3FAnimacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Onda onda3D = new Onda(bits, pbLienzo, Color.DarkGreen);
+            onda3D.m = 0.7;
+            onda3D.t = 0;
+            onda3D.v = 9.3;
+            onda3D.w = 1.5;
+            double t = 0.08, dt = 0, tf = 10;
+            do
+            {
+                onda3D.COLOR0 = Color.DarkGreen;
+                onda3D.Interferencia3D_3f();
+                await Task.Delay(40);
+                onda3D.COLOR0 = Color.White;
+                onda3D.Interferencia3D_3f();
+                onda3D.t = dt;
+                dt += t;
+            }
+            while (dt <= tf);
+        }
+
+        private void cuerdaVibranteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cuerda cue = new Cuerda(bits, pbLienzo, Color.DarkGreen);
+            cue.T = 0.3;
+            cue.graficarCuerda();
+        }
+
+        private async void animarCuerdaVibranteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cuerda cue = new Cuerda(bits, pbLienzo, Color.DarkGreen);
+
+            double t = 0;
+            do
+            {
+                cue.T = t;
+
+                cue.COLOR0 = Color.DarkGreen;
+                cue.graficarCuerda();
+                await Task.Delay(5);
+                cue.COLOR0 = Color.White;
+                cue.graficarCuerda();
+                t += 0.04;
+            } while (t < 20);
+        }
+
+        private void examParcial3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Onda o = new Onda(bits, pbLienzo, Color.DarkGreen);
+            o.t = 1.5;
+            o.ExamenP3();
+        }
+
+        private async void laminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Onda onda3D = new Onda(bits, pbLienzo, Color.DarkGreen);
+            onda3D.m = 0.15;
+            onda3D.t = 0;
+            onda3D.v = 9.5;
+            onda3D.w = 0.7;
+            double t = 0.1, dt = 0, tf = 10;
+            do
+            {
+                onda3D.COLOR0 = Color.DarkGreen;
+                onda3D.Lamina3D();
+                await Task.Delay(20);
+                onda3D.COLOR0 = Color.White;
+                onda3D.Lamina3D();
+                onda3D.t = dt;
+                dt += t;
+            }
+            while (dt <= tf);
+        }
     }
 }
